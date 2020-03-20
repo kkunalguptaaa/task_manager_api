@@ -16,7 +16,6 @@ router.post('/users',async(req,res)=>{     //we can use async for making our cod
                                  the value of error */
         sendWelcomeEmail(user.email,user.name)  /*this is also an asynchronous fun but we don need its return value
                                         and also no need to wait for it to first complete its job so not used await*/
-        console.log(result)
         const token= await user.generateAuthToken()
         res.status(201).send({user,token})
     }
