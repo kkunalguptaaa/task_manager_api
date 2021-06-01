@@ -12,7 +12,7 @@ const auth=async(req,res,next)=>{
                                                         database i.e. user in not loged out and still logedin */
         if(!user)
         {
-            throw new Error()
+            throw new Error() 
         }
         req.token=token         //returning the user and token so that we don't have to fetch user and token again
         req.user=user

@@ -108,7 +108,6 @@ userSchema.statics.findByCredentials=async(email,password)=>{
     const isMatch=await bcrypt.compare(password,user.password)  //here we verify the password of the user
     if(!isMatch){
         throw new error("Invalid Email or Password!")
-        
     }
     return user
 }

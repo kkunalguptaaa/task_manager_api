@@ -15,8 +15,8 @@ router.post('/users',async(req,res)=>{     //we can use async for making our cod
         await user.save()       /*we use try and catch intead of then and catch and here in catch we can grab                     
                                  the value of error */
         sendWelcomeEmail(user.email,user.name)  /*this is also an asynchronous fun but we don need its return value
-                                        and also no need to wait for it to first complete its job so not used await*/
-        const token= await user.generateAuthToken()
+                                       // and also no need to wait for it to first complete its job so not used await*/
+        const token= await user.generateAuthToken() 
         res.status(201).send({user,token})
     }
     catch(e){
